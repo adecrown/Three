@@ -359,7 +359,6 @@ for (var i = 0; i <= buttonsCount; i += 1) {
 function buttonClicked(id)
 {
   console.log(this.id);
-  console.log("I'm the best");
   var bunx= document.getElementById(id).getAttribute('cx');
   var buny= document.getElementById(id).getAttribute('cy');
   console.log(buny,bunx);
