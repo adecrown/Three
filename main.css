@@ -1,0 +1,35 @@
+.svgControls
+{
+  float: left;
+  width: 300px;
+  height: auto;
+  border-width: 1px;
+  border-color: black;
+  border-style: solid;
+  margin: 10px;
+}
+
+.svgContainer
+{
+  float: left;
+  margin: auto;
+  width: 800px ;
+  height:600px;
+  border-width: 1px;
+  border-color: black;
+  border-style: solid;
+}
+body{
+  margin: auto;
+}
+.svgAlert
+{
+  color: #d67820;
+  font-size: 20px;
+  font-weight: bold;
+  margin-left: 50px;
+}
+
+ellipse {
+  animation: move 10s 20.5s ease infinite;
+}

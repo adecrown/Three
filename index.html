@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+  <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+
+<section id="svgControls" class="svgControls">
+<p id="svgAlert" class="svgAlert">Alert: Player 1's turn</p>
+<div id="winner"></div>
+</section>
+
+  <section id="svgContainer" class="svgContainer">
+<!--onmousemove="showCoords(event)"-->
+  <svg width="800" height="600" xmlns="http://www.w3.org/2000/svg" >
+ <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+
+ <g>
+  <title>background</title>
+  <rect fill="#fff" id="canvas_background" height="602" width="802" y="-1" x="-1"/>
+  <g display="none" id="canvasGrid">
+   <rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%" id="svg_11"/>
+  </g>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <line stroke="#000" stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_1" y2="600" x2="801" y1="0.5" x1="-1.5" stroke-width="22" fill="none"/>
+  <line stroke="#000" stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_2" y2="1.49998" x2="800.5" y1="600.5" x1="0.5" fill-opacity="null" stroke-opacity="null" stroke-width="22" fill="none"/>
+  <line stroke="#000" stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_3" y2="-17.5" x2="397.5" y1="601.49999" x1="400.5" fill-opacity="null" stroke-opacity="null" stroke-width="22" fill="none"/>
+  <line stroke="#000" stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_4" y2="304.5" x2="803.5" y1="292.5" x1="-2.50001" fill-opacity="null" stroke-opacity="null" stroke-width="22" fill="none"/>
+  <rect fill="#f7ede3" stroke="#000" stroke-width="3" stroke-opacity="null" x="18.5" y="15.5" width="95" height="70" id="svg_12"/>
+  <rect fill="#f7ede3" stroke="#000" stroke-width="3" stroke-opacity="null" x="355.5" y="515.5" width="95" height="70" id="svg_13"/>
+  <rect fill="#f7ede3" stroke="#000" stroke-width="3" stroke-opacity="null" x="696.5" y="12.5" width="95" height="70" id="svg_14"/>
+  <rect fill="#f7ede3" stroke="#000" stroke-width="3" stroke-opacity="null" x="350.5" y="8.5" width="95" height="70" id="svg_15"/>
+  <rect fill="#f7ede3" stroke="#000" stroke-width="3" stroke-opacity="null" x="353.5" y="260.5" width="95" height="70" id="svg_16"/>
+  <rect fill="#f7ede3" stroke="#000" stroke-width="3" stroke-opacity="null" x="7.5" y="263.5" width="95" height="70" id="svg_17"/>
+  <rect fill="#f7ede3" stroke="#000" stroke-width="3" stroke-opacity="null" x="6.5" y="507.5" width="95" height="70" id="svg_18"/>
+  <rect fill="#f7ede3" stroke="#000" stroke-width="3" stroke-opacity="null" x="689.5" y="500.5" width="95" height="70" id="svg_20"/>
+  <rect fill="#f7ede3" stroke="#000" stroke-width="3" stroke-opacity="null" x="692.5" y="269.5" width="95" height="70" id="svg_19"/>
+  <ellipse stroke="#000" ry="28.5" rx="31" id="svg_6" cy="42" cx="398.5" stroke-opacity="null" stroke-width="3" fill="#d67820" />
+  <ellipse stroke="#000" ry="28.5" rx="31" id="svg_7" cy="47" cx="746.5" stroke-opacity="null" stroke-width="3" fill="#d67820"/>
+  <ellipse stroke="#000" ry="28.5" rx="31" id="svg_9" cy="536" cx="740.5" stroke-opacity="null" stroke-width="3" fill="#23c423"/>
+  <ellipse stroke="#000" ry="28.5" rx="31" id="svg_10" cy="550" cx="403.5" stroke-opacity="null" stroke-width="3" fill="#23c423"/>
+  <ellipse stroke="#000" ry="28.5" rx="31" id="svg_8" cy="540" cx="54.5" stroke-opacity="null" stroke-width="3" fill="#23c423"/>
+  <ellipse stroke="#000" ry="28.5" rx="31" id="svg_5" cy="50" cx="67.5" stroke-opacity="null" stroke-width="3" fill="#d67820"/>
+ </g>
+</svg>
+</section>
+<script src="three.js"></script>
+<script src="computer.js"></script>
+<script src="winMemory.js"></script>
+</body>
+</html>
