@@ -147,6 +147,7 @@ function startComputer()
       var ty = document.getElementById(mv).getAttribute('y') ;
       var tv = document.getElementById(mv).getAttribute('x');
       console.log("tv: "+ty,tv);
+      svgAnimate(buttonMovings,parseInt(tv)+50,parseInt(ty)+35);
       document.getElementById(buttonMovings).setAttribute('cy',parseInt(ty)+35);
       document.getElementById(buttonMovings).setAttribute('cx',parseInt(tv)+50);
       //console.log("tvPlus: "+(ty+50,tv+50);
@@ -179,7 +180,7 @@ function startComputer()
   }
 
 }
-player = ["svg_5","svg_6","svg_7"];
+//player = ["svg_5","svg_6","svg_7"];
 
 
 function changeJson(id,positionm)
