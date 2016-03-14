@@ -21,6 +21,10 @@ function showCoords(event) {
   //console.log(x); //document.getElementById("demo").innerHTML = coor;
 }
 
+
+document.getElementById("btnResetr").addEventListener("click", resetr);
+
+
 var player = ["svg_5","svg_6","svg_7"];
 var player1 =["svg_5","svg_6","svg_7"];
 var player2 =["svg_9","svg_10","svg_8"];
@@ -250,13 +254,16 @@ function movingTo(id,ballId,parentId,e)
       }
       else {
         console.log("not free");
+        document.getElementById('svgAlert').innerHTML = "The position is not free";
       }
     }
     else {
       console.log("can't skip");
+      document.getElementById('svgAlert').innerHTML = "You can't Skip";
     }
   }
   else {
+    document.getElementById('svgAlert').innerHTML = "Not yet your turn";
     console.log("Not yet your turn");
   }
 }
@@ -293,12 +300,13 @@ function whoSTurn(id)
 function changePlayer()
 {
   var hn = ["svg_5","svg_6","svg_7"];
+  document.getElementById('svgAlert').innerHTML = "............";
   if(player.toString() == hn.toString())
   {
     player = ["svg_8","svg_9","svg_10"];
     console.log("Player 2's turn: "+player);
-    document.getElementById("svgAlert").innerHTML="Alert: player 2's turn";
-    document.getElementById("svgAlert").style.color = "#23c423";
+    document.getElementById("svgTurn").innerHTML="Player 2's turn";
+    document.getElementById("svgTurn").style.color = "#23c423";
     nextPlayer = "player 2";
   }
   else
@@ -309,15 +317,15 @@ function changePlayer()
     console.log("Player 1's turn: "+player);
     if(opponent == "computer")
     {
-      document.getElementById("svgAlert").innerHTML="Alert: computer's turn";
+      document.getElementById("svgTurn").innerHTML="Computer's turn";
       nextPlayer = "computer";
     }
     else
     {
-      document.getElementById("svgAlert").innerHTML="Alert: player 1's turn";
+      document.getElementById("svgTurn").innerHTML="Player 1's turn";
       nextPlayer = "player 1";
     }
-    document.getElementById("svgAlert").style.color = "#d67820";
+    document.getElementById("svgTurn").style.color = "#d67820";
   }
 
 }
@@ -452,4 +460,36 @@ function svgAnimate(id,x,y)
     cx:x,
     cy:y
   },500);
+}
+
+
+function resetr()
+{
+  console.log("click");
+  document.getElementById("svg_5").setAttribute('cy',50);
+  document.getElementById("svg_5").setAttribute('cx', 67.5);
+  document.getElementById("svg_6").setAttribute('cy',42);
+  document.getElementById("svg_6").setAttribute('cx', 398.5);
+  document.getElementById("svg_7").setAttribute('cy',47);
+  document.getElementById("svg_7").setAttribute('cx',746.5);
+  document.getElementById("svg_8").setAttribute('cy',540);
+  document.getElementById("svg_8").setAttribute('cx',54.5);
+  document.getElementById("svg_9").setAttribute('cy',536);
+  document.getElementById("svg_9").setAttribute('cx',740.5);
+  document.getElementById("svg_10").setAttribute('cy',550);
+  document.getElementById("svg_10").setAttribute('cx',403.5);
+
+  for (var i = 1; i < 10; i++)
+  {
+    if(i == 4 || i == 5 || i == 6)
+    {
+      window["position"+i] = "free";
+    }
+    else {
+      window["position"+i] = "occupied";
+    }
+  }
+  changePlayer
+  clearInterval(turnerTimer);
+  turnerTimer = setInterval(changePlayer, 15000);//15 seconds
 }
