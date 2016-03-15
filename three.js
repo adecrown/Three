@@ -8,8 +8,8 @@ var buYx;
 var position1 = "occupied";var position2 = "occupied";var position3 = "occupied";var position4 = "free";var position5 = "free";var position6 = "free";var position7 = "occupied";var position8 = "occupied";var position9 = "occupied";
 var whereFrom;
 var isThereAWinner = "no";
-var turnerTimer = setInterval(changePlayer, 15000);//15 seconds
-var opponent = "computer";
+var turnerTimer;
+var opponent;
 var nextPlayer;
 var snapS = Snap("#threesvg");
 
@@ -20,7 +20,50 @@ function showCoords(event) {
   var coor = "X coords: " + x + ", Y coords: " + y;
   //console.log(x); //document.getElementById("demo").innerHTML = coor;
 }
+function start(playing)
+{
+  opponent = playing;
+  clearInterval(turnerTimer);
+  turnerTimer = setInterval(changePlayer, 15000);//15 seconds
+}
 
+function selectOpponent()
+{
+  var c = document.getElementsByName("opponentP")[0].checked;
+  var p = document.getElementsByName("opponentP")[1].checked;
+  if(c == true)
+  {
+    start("computer");
+    document.getElementById('whoPlay').innerHTML = "Playing with the computer";
+  }
+  else if (p == true) {
+    start("player");
+    document.getElementById('whoPlay').innerHTML = "Playing with another player";
+  }
+  else {
+
+  }
+}
+selectOpponent();
+
+var rad = document.getElementsByName("opponentP");
+var radCount = rad.length;
+for (var i = 0; i <= radCount; i += 1) {
+  if(rad[i] != undefined)
+  {
+    rad[i].onclick = function(e)
+    {
+      console.log(this);
+      document.getElementById(this.id).addEventListener("click", function()
+      {
+        resetr();
+        selectOpponent();
+      }
+    );
+  };
+}
+
+};
 
 document.getElementById("btnResetr").addEventListener("click", resetr);
 

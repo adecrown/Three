@@ -53,3 +53,16 @@ ellipse {
   margin-bottom: 5px;
   margin-top: 7px;
 }
+.selectPop
+{
+  border-width: 1px;
+  border-color: black;
+  border-style: solid;
+  width: 150px;
+  font-size: 15px;
+  font-weight: bold;
+  text-align: left;
+  margin-left: 70px;
+  margin-right: 70px;
+  margin-top: 20px;
+}
